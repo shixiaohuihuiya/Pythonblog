@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>添加用户</title>
+        <link rel="stylesheet" href="../static/css/adduser.css">
+    </head>
+    <body>
+        <div class="content">
+            <div class="fen"></div>
+            <div class="top">
+                <h1>添&ensp;加&ensp;用&ensp;户</h1>
+            </div>
+            <div class="bottom">
+                <form action="#" method="POST">
+                    <ul>
+                        <li>
+                            <img src="../static/img/logo/yonghu.png" width="30"><input type="text" placeholder="昵称" name="real_name" />
+                        </li>
+
+                        <li>
+                            <img src="../static/img/logo/zhanghaoguanli.png" width="30"><input type="text" placeholder="账号" name="username"/>
+                        </li>
+                        <li>
+                              <img src="../static/img/logo/jiaosequanxian.png" width="30">
+                              <input type="radio" id="option1" name="option" value="1" style="width: 20px">普通人&ensp;&ensp;
+                              <input type="radio" id="option2" name="option" value="2" style="width: 20px">管理员
+                        </li>
+                        <li>
+                            <img src="../static/img/logo/mima.png" width="30"><input type="password" placeholder="密码" name="password"/>
+                        </li>
+
+
+                        <li>
+                            <img src="../static/img/logo/querenmima.png" width="30"><input type="password" placeholder="确认密码" name="is_password"/>
+                        </li>
+                        <li>
+                            <img src="../static/img/logo/shouji.png" ><input type="number" placeholder="手机号" name="phonenumber"/>
+                        </li>
+                        <li>
+                            <img src="../static/img/logo/youxiang.png" ><input type="text" placeholder="邮箱" name="email"/>
+                        </li>
+                        <li>
+                            <img src="../static/img/logo/yanzhengma_hei.png" ><input title="区分大小写" type="text" placeholder="验证码" id="text"/><canvas id="canvas" width="100" height="30" onclick="dj()" style="border: 1px solid #ccc;border-radius: 5px;vertical-align:middle; " title="点击图片切换"></canvas>
+                        </li>
+                        <input type="submit" value="添加" class="submit"/>
+                    </ul>
+                </form>
+
+            </div>
+        </div>
+        <p style="text-align: center; font-family:华文行楷; padding-bottom: 0px">灰灰图书&copy;版权所有</p>
+
+    </body>
+   <script src="../static/js/yan.js"></script>
+</html>

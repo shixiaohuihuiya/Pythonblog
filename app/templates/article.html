@@ -1,0 +1,41 @@
+<!--这个是继承了 layout.html 页面 的所有内容-->
+{% extends 'layout.html' %}
+
+{% block body %}
+ <link href="{{ url_for('static', filename='css/article.css') }}" rel="stylesheet">
+<header style=" background-image: url('{{ url_for('static', filename='img/post-bg.jpg') }}')">
+    <p style="color: white;font-size: 48px;text-align: center;padding: 80px;font-family: '微软雅黑 Light'">{{article.article_name}}&ensp;&ensp;<span style="color: white;font-size: 16px;font-family: 华文行楷;margin-top: 20px">{{article.author}}</span></p>
+</header>
+  <!-- Post Content -->
+<div class="content_article">
+     <article>
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto">
+          {{article.article_content | safe}}
+        </div>
+      </div>
+    </div>
+  </article>
+    <br>
+
+</div>
+<form action="" method="POST" class="form_sub">
+    <input type="text" name="pl" id="pl" placeholder="评论...." />
+    <input type="submit" value="提交" class="sub">
+
+</form>
+{% for pl in remacks%}
+<!--评论展示部分-->
+<div class="pl_display">
+    <img src="{{pl.avatar}}" alt=""/>
+</div>
+{% endfor %}
+
+
+
+<script src="../static/js/article.js"></script>
+
+
+{% endblock %}
+

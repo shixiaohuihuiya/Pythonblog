@@ -1,0 +1,5 @@
+version: "1"
+services:
+  build:
+    ports:
+      - "6789:6789"

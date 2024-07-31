@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!--导入fl.css-->
+ <link href="{{ url_for('static', filename='css/fl.css') }}" rel="stylesheet">
+
+
+<header style="background-image: url(post-bg.jpg)">
+    <p style="color: white;font-size: 30px;text-align: center;padding: 80px">分类</p>
+</header>
+<!--分类的主体部分-->
+
+<div class="content">
+    {% for fl in fls %}
+    <li class="li_img_fl">
+       <a href="flArticle/{{fl.id}}"> <img src="{{fl.type_img}}" width="80px"  height="80px" class="img_fl" title="{{fl.type_name}}">
+       <p>{{fl.type_name}}</p></a>
+    </li>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

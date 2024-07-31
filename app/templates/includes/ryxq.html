@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>用户详情</title>
+        <link rel="stylesheet" href="../static/css/adduser.css">
+    </head>
+    <body>
+        <div class="content">
+            <div class="fen"></div>
+            <div class="top">
+                <h1>用户详情</h1>
+            </div>
+            <div class="bottom">
+                <form action="#" method="POST">
+                    <% for %>
+                    <ul>
+                        <li>
+                            <img src="../static/img/logo/yonghu.png" width="30"><input type="text" placeholder="昵称"name="real_name" value="{{}}"/>
+                        </li>
+
+                        <li>
+                            <img src="../static/img/logo/zhanghaoguanli.png" width="30"><input type="text" placeholder="账号" name="username"/>
+                        </li>
+                        <li>
+                            <img src="../static/img/logo/mima.png" width="30"><input type="password" placeholder="密码" name="password"/>
+                        </li>
+
+
+                        <li>
+                            <img src="../static/img/logo/querenmima.png" width="30"><input type="password" placeholder="确认密码" name="is_password"/>
+                        </li>
+                          <li>
+                            <img src="../static/img/logo/youxiang.png" ><input type="text" placeholder="头像地址请输入" name="avator"/>
+                        </li>
+                        <li>
+                            <img src="../static/img/logo/youxiang.png" ><input type="text" placeholder="邮箱" name="email"/>
+                        </li>
+                        <li>
+                            <img src="../static/img/logo/yanzhengma_hei.png" ><input title="区分大小写" type="text" placeholder="验证码"  id="text"/><canvas id="canvas" width="100" height="30" onclick="dj()" style="border: 1px solid #ccc;border-radius: 5px;vertical-align:middle; " title="点击图片切换"></canvas>
+                        </li>
+                        <input type="submit" value="添加" class="submit"/>
+                    </ul>
+                </form>
+
+            </div>
+        </div>
+        <p style="text-align: center; font-family:华文行楷; padding-bottom: 0px">灰灰图书&copy;版权所有</p>
+
+    </body>
+   <script src="../static/js/yan.js"></script>
+</html>

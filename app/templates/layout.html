@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灰灰博客</title>
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/kzt.css') }}" rel="stylesheet">
+</head>
+<body>
+    {% include 'includes/_navbar.html' %}
+    {% block body %}{% endblock %}
+    {% include 'includes/_footer.html' %}
+    <script src="{{url_for('static',filename='js/kzt.js')}}"></script>
+</body>
+</html>
