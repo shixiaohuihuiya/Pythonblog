@@ -1,0 +1,129 @@
+{% extends 'layout.html' %}
+{% block body %}
+<header style="background-image: url(../static/img/post-bg.jpg)">
+    <p style="color: white;font-size: 30px;text-align: center;padding: 80px">控制台</p>
+</header>
+<div class="content_kzt">
+  <h1>控制台 <small> 欢迎  / {{session.username}}</small> </h1>
+
+  <div class="li_select" >
+      <li class="li_item">文章详情</li>
+      <li class="li_item">评论详情</li>
+      <li class="li_item">点赞详情</li>
+      <li class="li_item">人员详情</li>
+
+  </div><hr style="border: 5px solid cornflowerblue">
+  <div class="display_content">
+    <div class="article_content" >
+
+      <a class="addbtn" href="/add_article" style="float:right" title="点击添加文章"> 添加文章 </a>
+
+      <table>
+        <thead>
+         <tr>
+          <th style="width: 150px">文章名称</th>
+        <th>作者</th>
+        <th style="width: 150px">创建日期</th>
+        <th>标签</th>
+        <th>点赞数</th>
+        <th>评论数</th>
+        <th>操作</th>
+        </tr>
+        </thead>
+        {% for article in realUserArticle %}
+         <tbody>
+       <tr class="tr">
+         <td>{{article.article_name}}</td>
+         <td>{{article.author}}</td>
+         <td>{{article.update_time}}</td>
+         <td>{{article.article_tag}}</td>
+         <td>{{article.article_star_num}}</td>
+         <td>{{article.article_comment_num}}</td>
+         <td>
+           <a href="del_article/{{article.id}}" class="li_item"> 删除 </a>
+           <button type="submit">修改</button>
+         </td>
+       </tr>
+       </tbody>
+        {% endfor %}
+      </table>
+    </div>
+    <div class="article_content" >
+      <table>
+        <thead>
+         <tr>
+          <th style="width: 150px">评论</th>
+        <th>作者</th>
+        <th>创建日期</th>
+        <th>标签</th>
+        <th>点赞数</th>
+        <th>评论数</th>
+        <th>操作</th>
+        </tr>
+        </thead>
+       <tbody>
+       <tr>
+         <td>1</td>
+         <td>2</td>
+         <td>3</td>
+         <td>4</td>
+         <td>5</td>
+         <td>5</td>
+         <td>
+           <button type="submit">删除</button>
+           <button type="submit">修改</button>
+         </td>
+       </tr>
+       </tbody>
+
+<!--        <hr style=" border: 5px solid cornflowerblue"/>-->
+      </table>
+    </div>
+
+    <div class="article_content">
+      <table>
+        <tr style="border-bottom: 10px solid red">
+          <th style="width: 150px">文章</th>
+        <th>点赞人</th>
+        <th>点赞时间</th>
+          <th>状态</th>
+        </tr>
+<!--        <hr style=" border: 5px solid cornflowerblue"/>-->
+         {% for dzxq in dzxq %}
+          <tbody>
+          <tr>
+                <td>{{dzxq.title}}</td>
+                <td>{{dzxq.realname}}</td>
+                <td>{{dzxq.createtime}}</td>
+                <td>{{dzxq.state}}</td>
+                <td><a href="del_dzxq/{{dzxq.id}}" class="li_item"> 删除 </a></td>
+            </tr>
+          </tbody>
+          {% endfor %}
+      </table>
+    </div>
+
+     <div class="article_content">
+      <table>
+        <tr style="border-bottom: 10px solid red">
+          <th style="width: 150px">人员详情</th>
+        <th>作者</th>
+        <th>创建日期</th>
+        <th>标签</th>
+        <th>点赞数</th>
+        <th>评论数</th>
+        <th>操作</th>
+        </tr>
+<!--        <hr style=" border: 5px solid cornflowerblue"/>-->
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+{% endblock %}

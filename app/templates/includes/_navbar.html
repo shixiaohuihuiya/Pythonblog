@@ -1,0 +1,17 @@
+<nav class="nav_top">
+    <div class="nav_top_logo">
+        <img src="{{ url_for('static', filename='img/logo.png') }}">
+    </div>
+    <div class="nav_top_li">
+    <li><a href="{{url_for('index')}}">首页</a></li>
+    <li><a href="{{url_for('fl')}}">分类</a></li>
+    {% if session.logged_in %}
+    <li><a href="{{url_for('kzt')}}">控制台</a></li>
+        <li><a href="{{url_for('loginout')}}">退出</a></li>
+     {% else %}
+    <li><a href="{{url_for('login')}}">登录</a></li>
+    {% endif %}
+    </div>
+</nav>
+
+

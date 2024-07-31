@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{%block title%}首页{%endblock%}
+{% block body %}
+<!--头部 图片部分实现-->
+<!--头部实现轮播图-->
+<header style="background-image: url(../static/img/post-bg.jpg)">
+    <p style="color: white;font-size: 30px;text-align: center;padding: 80px">技术不只是一种工具</p>
+</header>
+{% if not articles %}
+    <div style="margin:100px;text-align:center" >
+      <h4>文章不存在哦！</h4>
+    </div>
+{% else %}
+<div>
+    {% for article in articles %}
+     <article class="post-preview">
+         <div class="content_article">
+             <!--这里是博客的封面-->
+         <div class="img_fm">
+             <img src="{{article.article_pic}}" alt="" srcset="" width="100" height="100">
+         </div>
+         <div class="clearfix">
+        <h1 class="post-title">{{article.article_name}}</h1>
+        <p class="post-author">作者：{{article.author}} &nbsp {{article.update_time}} </p>
+        <p style="color: #cccccc;font-size: 13px;margin-top: 10px">文章简介:{{article.article_remark}}</p>
+        <p style="color: #cccccc;font-size: 13px;margin-top: 10px">文章标签:{{article.article_tag}}</p>
+
+        </div>
+             <div class="ck">
+                 <p><a class="ck_qw" href="article/{{article.id}}">查看全文</a></p>
+             </div>
+         </div>
+    <hr class="underline">
+      </article>
+
+    {% endfor %}
+    </div>
+    {% endif %}
+    <ul class="pagination">
+      {% if page == 1 %}
+        <li class="page-item disabled">
+            <a class="page-link" href="/">← 上一页</a>
+        </li>
+      {% else %}
+        <li class="page-item">
+            <a class="page-link" href="/flArticle/2?page={{page-1}}">← 上一页</a>
+        </li>
+      {% endif %}
+        <li class="page-item">
+          <a class="page-link" href="/flArticle/2?page={{page+1}}">下一页 →</a>
+        </li>
+      </ul>
+</div>
+
+
+
+{% endblock %}
